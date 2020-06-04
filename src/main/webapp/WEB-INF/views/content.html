@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Noi dung bai viet</title>
+</head>
+<body>
+<a href="/">Quay lai trang chu</a>
+<table th:object="${Blog}">
+    <tr>
+        <td th:text="*{name}"></td>
+    </tr><tr>
+        <td th:text="*{tit}"></td>
+    </tr><tr>
+        <td th:text="*{content}"></td>
+    </tr>
+</table>
+
+
+</form>
+</body>
+</html>

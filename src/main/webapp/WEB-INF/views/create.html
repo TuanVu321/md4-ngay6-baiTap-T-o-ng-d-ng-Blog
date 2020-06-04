@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog moi</title>
+</head>
+<body>
+<a href="/">Quay lai trang chu</a>
+<form th:action="@{/create}" method="post" th:object="${Blog}">
+    <table>
+        <tr>
+            <td>Ten bai viet</td>
+            <td> <input th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Tit bai viet</td>
+            <td> <input  th:field="*{tit}"></td>
+        </tr>
+        <tr>
+            <td>Noi dung bai viet</td>
+            <td> <textarea rows = "20" cols = "80" th:field="*{content}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Dang bai"/></td>
+        </tr>
+    </table>
+
+
+</form>
+</body>
+</html>
