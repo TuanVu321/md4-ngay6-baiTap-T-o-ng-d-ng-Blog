@@ -17,6 +17,16 @@ public class Blog {
 
     @Column(nullable = false)
     String tit;
+    @ManyToOne
+    public Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public String getTit() {
         return tit;

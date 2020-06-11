@@ -3,6 +3,8 @@ package com.codegym.service.blogService;
 import com.codegym.model.Blog;
 import com.codegym.repository.blogRepository.IBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -11,8 +13,8 @@ public class BlogService implements IBlogService {
     @Autowired IBlogRepository blogRepository;
 
     @Override
-    public List findAll() {
-        return blogRepository.findAll();
+    public Page findAll(Pageable pageable) {
+        return blogRepository.findAll(pageable);
     }
 
     @Override
@@ -28,5 +30,10 @@ public class BlogService implements IBlogService {
     @Override
     public void delete(Long id) {
         blogRepository.delete(id);
+    }
+
+    @Override
+    public Page<Blog> findAllByTitContaining(String tit, Pageable pageable) {
+        return blogRepository.findAllByTitContaining(tit,pageable);
     }
 }
